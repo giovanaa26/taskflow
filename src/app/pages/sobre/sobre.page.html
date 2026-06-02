@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header">
+      <div class="logo">
+        <ion-icon name="checkbox-outline"></ion-icon>
+        <span>TaskFlow</span>
+      </div>
+      <div class="user-info">
+        <span>{{ nomeUsuario }}</span>
+        <span class="logout">Sair</span>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="inner">
+    <h1 class="title">SOBRE</h1>
+
+    <div class="card">
+      <div class="card-title">
+        <ion-icon name="document-text-outline"></ion-icon>
+        <span>TaskFlow</span>
+      </div>
+      <p>Aplicativo desenvolvido para facilitar a organização de tarefas diárias.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <ion-icon name="people-outline"></ion-icon>
+        <span>Equipe</span>
+      </div>
+
+      <div class="member">
+        <div class="avatar roxo">GS</div>
+        <span>Giovana Santos</span>
+        <div class="icons">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="avatar azul">IL</div>
+        <span>Isabella Louise</span>
+        <div class="icons">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="avatar verde">MC</div>
+        <span>Maria Clara Leal</span>
+        <div class="icons">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="support">
+      <h3>Suporte</h3>
+      <div class="support-buttons">
+        <button class="btn-primary">
+          <ion-icon name="mail-outline"></ion-icon>
+          Contato
+        </button>
+        <button class="btn-outline">
+          Avaliar o App
+        </button>
+      </div>
+    </div>
+
+    <div style="height: 20px;"></div>
+
+  </div>
+</ion-content>

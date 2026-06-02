@@ -1,0 +1,165 @@
+ion-content {
+  --background: #dcdceb;
+}
+
+.inner {
+  padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+ion-toolbar {
+  --background: #f7f7fb;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.header {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: black;
+
+  ion-icon {
+    color: #7c4dff;
+    font-size: 22px;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #444;
+  font-size: 14px;
+}
+
+.logout {
+  font-weight: 600;
+  color: #7c4dff;
+}
+
+.title {
+  text-align: center;
+  color: #5e35b1;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.card {
+  background: #f7f7fb;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: black;
+
+  ion-icon {
+    color: #7c4dff;
+    font-size: 20px;
+  }
+}
+
+.card p {
+  color: #333;
+  font-size: 14px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: black;
+
+  span {
+    flex: 1;
+    font-size: 14px;
+  }
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.roxo { background: #7c4dff; }
+.azul { background: #42a5f5; }
+.verde { background: #26a69a; }
+
+.icons {
+  display: flex;
+  gap: 8px;
+  font-size: 20px;
+  color: #7c4dff;
+}
+
+.support {
+  margin-top: 8px;
+  margin-bottom: 20px;
+
+  h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+}
+
+.support-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  flex: 1;
+  background: linear-gradient(90deg, #7c4dff, #5e35b1);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-outline {
+  flex: 1;
+  background: transparent;
+  border: 2px solid #7c4dff;
+  color: #5e35b1;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}

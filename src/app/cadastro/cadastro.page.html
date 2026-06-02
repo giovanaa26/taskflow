@@ -1,0 +1,44 @@
+<ion-content class="auth-page">
+
+  <div class="auth-container">
+
+    <div>
+      <h1 class="logo">TaskFlow</h1>
+      <p class="subtitulo">Criar conta</p>
+    </div>
+
+    <div class="form-area">
+
+      <div class="input-custom">
+        <ion-input placeholder="Nome" [(ngModel)]="nome"></ion-input>
+      </div>
+
+      <div class="input-custom">
+        <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+      </div>
+
+      <div class="input-custom">
+        <ion-input placeholder="Senha" type="password" [(ngModel)]="senha"></ion-input>
+      </div>
+
+      <div class="input-custom">
+        <ion-input placeholder="Confirmar senha" type="password" [(ngModel)]="confirmarSenha"></ion-input>
+      </div>
+
+      <ion-button expand="block" (click)="cadastrar()" class="botao-principal">
+        Cadastrar
+      </ion-button>
+
+      <p class="texto-link">
+        Já possui conta?
+      </p>
+
+      <a routerLink="/login" class="link">
+        Entre aqui
+      </a>
+
+    </div>
+
+  </div>
+
+</ion-content>

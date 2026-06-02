@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Tarefa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+    <div class="input-wrapper">
+      <label>Título da tarefa</label>
+      <ion-input placeholder="Ex: Estudar Ionic" [(ngModel)]="titulo"></ion-input>
+    </div>
+
+    <div class="row">
+      <div class="input-wrapper small">
+        <label>Data</label>
+        <ion-input type="date" [(ngModel)]="data"></ion-input>
+      </div>
+      <div class="input-wrapper small">
+        <label>Hora</label>
+        <ion-input type="time" [(ngModel)]="hora"></ion-input>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <label>Descrição (Opcional)</label>
+      <ion-textarea placeholder="Ex: Revisar conteúdo" [rows]="3" [(ngModel)]="descricao"></ion-textarea>
+    </div>
+
+    <div class="row">
+      <div class="input-wrapper small">
+        <label>Categoria</label>
+        <ion-select placeholder="Trabalho" [(ngModel)]="categoria">
+          <ion-select-option value="trabalho">Trabalho</ion-select-option>
+          <ion-select-option value="estudo">Estudo</ion-select-option>
+          <ion-select-option value="pessoal">Pessoal</ion-select-option>
+        </ion-select>
+      </div>
+      <div class="input-wrapper small">
+        <label>Prioridade</label>
+        <ion-select placeholder="Alta" [(ngModel)]="prioridade">
+          <ion-select-option value="alta">Alta</ion-select-option>
+          <ion-select-option value="media">Média</ion-select-option>
+          <ion-select-option value="baixa">Baixa</ion-select-option>
+        </ion-select>
+      </div>
+    </div>
+
+    <ion-button expand="block" class="botao-salvar" (click)="salvar()">
+      ATUALIZAR
+    </ion-button>
+
+  </div>
+</ion-content>

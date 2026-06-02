@@ -1,0 +1,56 @@
+<ion-content class="auth-page">
+
+  <div class="auth-container">
+
+    <div>
+      <h1 class="logo">TaskFlow</h1>
+      <p class="subtitulo">Gerencie suas tarefas</p>
+    </div>
+
+    <div class="form-area">
+
+      <div class="input-custom">
+        <ion-input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="email">  
+        </ion-input>
+      </div>
+
+      <div class="input-custom">
+        <ion-input
+          type="password"
+          placeholder="Senha"
+          [(ngModel)]="senha">
+        </ion-input>
+      </div>
+
+      
+      <ion-button
+      expand="block"
+      (click)="login()"
+      class="botao-principal">
+      Entrar
+    </ion-button>
+
+    <a (click)="loginSemGoogle()" class="link link-sem-google">
+      Usar sem Google Tasks
+    </a>
+    <a routerLink="/trocar-senha" class="link">
+      Esqueci minha senha
+    </a>
+
+      
+      
+      <p class="texto-link">
+        Ainda não possui conta? <a routerLink="/cadastro" class="link">
+        Crie aqui
+      </a>
+      </p>
+
+    </div>
+
+  </div>
+
+</ion-content>
+

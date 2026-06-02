@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="logo" slot="start">
+      <ion-icon name="checkbox-outline"></ion-icon>
+      <span>TaskFlow</span>
+    </div>
+    <div class="user-actions" slot="end">
+      <span>{{ nomeUsuario }}</span>
+      <button routerLink="/home">Sair</button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="card">
+    <h2>Minhas Tarefas</h2>
+    <p>Organize seu dia com eficiência</p>
+    <div class="stats">
+      <div class="box total">{{total}}<span>TOTAL</span></div>
+      <div class="box ativas">{{ativas}}<span>ATIVAS</span></div>
+      <div class="box concluidas">{{concluidas}}<span>CONCLUÍDAS</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Filtros</h3>
+    <div class="status">
+      <button [class.active]="filtro==='todas'" (click)="setFiltro('todas')">Todas</button>
+      <button [class.active]="filtro==='ativas'" (click)="setFiltro('ativas')">Ativas</button>
+      <button [class.active]="filtro==='concluidas'" (click)="setFiltro('concluidas')">Concluídas</button>
+    </div>
+    <ion-item lines="none">
+      <ion-select placeholder="Todas as categorias">
+        <ion-select-option>Trabalho</ion-select-option>
+        <ion-select-option>Pessoal</ion-select-option>
+        <ion-select-option>Estudo</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="task" *ngFor="let tarefa of tarefasFiltradas">
+  <ion-checkbox [(ngModel)]="tarefa.concluida" (ionChange)="concluirTarefa(tarefa)"></ion-checkbox>
+  <div class="info">
+    <h4>{{tarefa.titulo}}</h4>
+    <p>{{tarefa.descricao}}</p>
+    <div class="tags">
+      <span class="tag data">{{tarefa.data}}</span>
+      <span class="tag hora" *ngIf="tarefa.hora">{{tarefa.hora}}</span>
+      <span class="tag prioridade" *ngIf="tarefa.prioridade">{{tarefa.prioridade}}</span>
+      <span class="tag" *ngIf="tarefa.categoria">{{tarefa.categoria}}</span>
+    </div>
+  </div>
+  <div class="acoes">
+    <button class="btn-editar" (click)="editarTarefa(tarefa)">
+      <ion-icon name="pencil-outline"></ion-icon>
+    </button>
+    <button class="btn-excluir" (click)="excluirTarefa(tarefa)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </button>
+  </div>
+</div>
+
+</ion-content>

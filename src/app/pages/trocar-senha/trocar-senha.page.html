@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trocar Senha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <div class="container">
+
+    <div class="input-wrapper">
+      <label>Email</label>
+      <ion-input type="email" placeholder="seuemail@exemplo.com" [(ngModel)]="email"></ion-input>
+    </div>
+
+    <ion-button expand="block" (click)="trocarSenha()" class="botao-salvar">
+      Enviar email de redefinição
+    </ion-button>
+
+  </div>
+</ion-content>
