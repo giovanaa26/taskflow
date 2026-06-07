@@ -18,11 +18,21 @@
       </div>
 
       <div class="input-custom">
-        <ion-input placeholder="Senha" type="password" [(ngModel)]="senha"></ion-input>
+        <ion-input [type]="tipoSenha" placeholder="Senha" [(ngModel)]="senha"></ion-input>
+        <ion-icon
+          [name]="mostrarSenha ? 'eye-outline' : 'eye-off-outline'"
+          (click)="toggleSenha()"
+          class="icone-olho">
+        </ion-icon>
       </div>
 
       <div class="input-custom">
-        <ion-input placeholder="Confirmar senha" type="password" [(ngModel)]="confirmarSenha"></ion-input>
+          <ion-input [type]="tipoConfirmarSenha" placeholder="Confirmar senha" [(ngModel)]="confirmarSenha"></ion-input>
+          <ion-icon
+            [name]="mostrarConfirmarSenha ? 'eye-outline' : 'eye-off-outline'"
+            (click)="toggleConfirmarSenha()"
+            class="icone-olho">
+          </ion-icon>
       </div>
 
       <ion-button expand="block" (click)="cadastrar()" class="botao-principal">

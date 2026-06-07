@@ -17,14 +17,18 @@
         </ion-input>
       </div>
 
-      <div class="input-custom">
-        <ion-input
-          type="password"
-          placeholder="Senha"
-          [(ngModel)]="senha">
-        </ion-input>
-      </div>
-
+    <div class="input-custom">
+      <ion-input
+        [type]="tipoSenha"
+        placeholder="Senha"
+        [(ngModel)]="senha">
+      </ion-input>
+      <ion-icon
+        [name]="mostrarSenha ? 'eye-outline' : 'eye-off-outline'"
+        (click)="toggleSenha()"
+        class="icone-olho">
+      </ion-icon>
+    </div>
       
       <ion-button
       expand="block"
@@ -33,9 +37,6 @@
       Entrar
     </ion-button>
 
-    <a (click)="loginSemGoogle()" class="link link-sem-google">
-      Usar sem Google Tasks
-    </a>
     <a routerLink="/trocar-senha" class="link">
       Esqueci minha senha
     </a>

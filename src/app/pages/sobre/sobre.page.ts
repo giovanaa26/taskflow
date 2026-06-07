@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonContent, IonIcon, IonToolbar, IonHeader } from '@ionic/angular/standalone';
@@ -24,7 +25,7 @@ export class SobrePage implements OnInit {
 
   nomeUsuario = '';
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private router: Router) {
     addIcons({
       checkboxOutline,
       documentTextOutline,
@@ -45,4 +46,10 @@ export class SobrePage implements OnInit {
       }
     });
   }
+
+  async sair() {
+  await this.auth.logout();
+  sessionStorage.clear();
+  this.router.navigate(['/home']);
+}
 }

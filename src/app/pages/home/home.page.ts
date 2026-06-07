@@ -11,6 +11,8 @@ import { addIcons } from 'ionicons';
 import { checkboxOutline, pencilOutline, trashOutline } from 'ionicons/icons';
 import { AuthService } from '../../services/auth';
 import { GoogleTasksService } from '../../services/google-tasks';
+import { NativeService } from '../../services/native';
+
 
 @Component({
   selector: 'app-home',
@@ -29,7 +31,7 @@ export class HomePage implements OnInit {
   filtro = 'todas';
   tarefas: any[] = [];
 
-  constructor(private auth: AuthService, private googleTasks: GoogleTasksService, private router: Router) {
+  constructor(private auth: AuthService, private googleTasks: GoogleTasksService, private router: Router, private native: NativeService) {
     addIcons({ checkboxOutline, pencilOutline, trashOutline });
   }
 
@@ -72,6 +74,7 @@ async carregarTarefas() {
   async concluirTarefa(tarefa: any) {
     if (tarefa.concluida && tarefa.id) {
       await this.googleTasks.concluirTarefa(tarefa.id);
+      await this.native.vibrar();
       await this.carregarTarefas();
     }
   }
@@ -100,4 +103,10 @@ async carregarTarefas() {
     if (this.filtro === 'concluidas') return this.tarefas.filter(t => t.concluida);
     return this.tarefas;
   }
+
+  async sair() {
+  await this.auth.logout();
+  sessionStorage.clear();
+  this.router.navigate(['/home']);
+}
 }
